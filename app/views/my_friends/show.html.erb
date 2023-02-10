@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @my_friend %>
+
+<div>
+
+  <% if current_user.id == @my_friend.user_id %>
+  <%= link_to "Edit this my friend", edit_my_friend_path(@my_friend) %> | <%end%>
+  <%= link_to "Back to my friends", my_friends_path %>
+  <% if current_user.id == @my_friend.user_id %>
+    <%= button_to "Destroy this my friend", @my_friend, method: :delete %>
+  <%end%>
+</div>
